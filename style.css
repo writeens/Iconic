@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.fa-twitter {
+    color: #1DA1F2;
+}
+.fa-facebook-f {
+    color: #4267b2;
+}
+.fa-instagram {
+    color:#f56040;
+}
+.fa-tumblr {
+    color: #34526f;
+}
+.fa-github, .fa-medium-m {
+    color: #fff;
+}
+.fa-linkedin-in {
+    color: #0077B5;
+}
+.fa-whatsapp {
+    color: #25D366;
+}
+.fa-google-plus-g {
+    color: #CC3333;
+}
+.fa-free-code-camp {
+    color: #006400;
+}
+.fa-yahoo {
+    color: #720E9E;
+}
+body {
+    background-color: #FB6C04;
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+}
+.red {
+    border: 5px solid red;
+}
+.jumbotron {
+    background-color: #1E1B1A;
+    margin:0;
+    width: 100vw;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.header > .text {
+    font-size: 3.5rem;
+    font-family: "Comic Sans MS";
+    color: #F2D5A5;
+}
+.header > .time {
+    font-size: 1.5rem;
+    color: #F2D5A5;
+}
+/*Pay attention to the board dimensions when implementing media queries*/
+.board {
+    max-width: 1024px;
+    width: 90vw;
+    height: 80vh;
+    background-color: #FBDB1C;
+    border-radius: 0.5rem;
+}
+.mat1 {
+    height: 100%;
+    margin: 1rem;
+}
+
+.col {
+    height: 80%;
+    /*border:1px solid rgba(197, 52, 52, 0.534);*/
+    margin: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding: 0;
+
+}
+.col div {
+    height: 100%;
+    width: 100%;
+}
+i {
+    font-size: 3rem;
+}
+.hidden {
+    visibility: hidden;
+}
+.clicked:active {
+    transform: translateY(1rem);
+    transition: transform 0.3s;
+}
+.intro {
+    width: 100vw;
+    height: 90vh;
+}
+.outro {
+    width: 100vw;
+    height: 90vh;
+}
+.start {
+    height: auto;
+    width: 70%;
+    background-color: #C35B05;
+    border-radius: 0.5rem;
+    font-family: "Comic Sans MS";
+    color: #F2D5A5;
+}
+.end {
+    height: auto;
+    width: 70%;
+    background-color: #C35B05;
+    border-radius: 0.5rem;
+    font-family: "Comic Sans MS";
+    color: #F2D5A5;
+}
+.start-text {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.close {
+    height: 90vh;
+    width: 100vw;
+}
+.end-text {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    font-size: 2.5rem;
+    font-family: "Comic Sans MS";
+}
+.time-text {
+    padding: 0.5rem;
+}
+.btn {
+    width: 10rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: #1E1B1A;
+    color: #F2D5A5;
+}
+.unclickable {
+    pointer-events: none;
+}
+.no-display {
+    display: none !important
+}
+@media all and (max-width: 500px) {
+    .col {
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    .start-text {
+        font-size: 1.2rem;
+    }
+    .end-text {
+        font-size: 1.2rem;
+    }
+    .header > .text {
+        font-size: 2rem;
+        font-family: "Comic Sans MS";
+    }
+    .header > .time {
+        font-size: 1rem;
+    }
+}
