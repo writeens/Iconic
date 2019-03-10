@@ -35,8 +35,17 @@
 body {
     background-color: #FB6C04;
     background-repeat: no-repeat;
-    height: auto;
-    width: auto;
+    height: 100vh;
+    width: 100vw;
+}
+body > div:first-child {
+    width: 100%;
+    height: 20%;
+    border: 1px solid green;
+}
+body > .mat1 {
+    height: 80%;
+    margin: 1.5rem;
 }
 .red {
     border: 5px solid red;
@@ -44,9 +53,9 @@ body {
 .jumbotron {
     background-color: #1E1B1A;
     margin:0;
-    width: 100vw;
     padding: 1rem;
     border-radius: 0.5rem;
+    width:100%;
 }
 .header > .text {
     font-size: 3.5rem;
@@ -60,29 +69,34 @@ body {
 /*Pay attention to the board dimensions when implementing media queries*/
 .board {
     max-width: 1024px;
-    width: 90vw;
-    height: 80vh;
+    width: 100vw;
+    height: auto;
     background-color: #FBDB1C;
     border-radius: 0.5rem;
+
 }
 .mat1 {
-    height: 100%;
+    height: 80vh;
     margin: 1rem;
 }
 
 .col {
-    height: 80%;
+    height: 8rem;
     /*border:1px solid rgba(197, 52, 52, 0.534);*/
     margin: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     padding: 0;
-
+    max-width: auto;
 }
 .col div {
     height: 100%;
     width: 100%;
+}
+.myRow {
+    height: 25%;
+    padding: 0;
 }
 i {
     font-size: 3rem;
@@ -149,9 +163,15 @@ i {
 .no-display {
     display: none !important
 }
+
 @media all and (max-width: 500px) {
     .col {
+        margin: 0.5rem;
+    }
+    body > .mat1 {
         margin: 0 0.5rem 0 0.5rem;
+        padding: 0;
+        height: 95%;
     }
     .start-text {
         font-size: 1.2rem;
