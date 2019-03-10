@@ -2,7 +2,6 @@
 // DOM Manipulation
 const divIcons = document.querySelectorAll(".col div");
 const icons = ["fa-twitter", "fa-facebook-f", "fa-instagram", "fa-tumblr", "fa-github", "fa-linkedin-in", "fa-medium-m", "fa-whatsapp", "fa-google-plus-g", "fa-free-code-camp", "fa-yahoo", "fa-codepen"];
-const btn = document.querySelector(".btn");
 const start = document.querySelector(".start-button");
 const playAgain = document.querySelector(".play-again");
 const i = document.querySelectorAll("i");
@@ -10,13 +9,12 @@ const time = document.querySelector(".time");
 const mat = document.querySelector(".mat1");
 const intro = document.querySelector(".intro");
 const outro = document.querySelector(".outro");
-const startText = document.querySelector(".start-text");
 const timeText = document.querySelector(".time-text");
-// pick at random six icons and store it somewhere
+// pick at random eight icons and store it somewhere
 
 function getNewIcons() {
     const newIcons = [];
-    while (newIcons.length < 6) {
+    while (newIcons.length < i.length / 2) {
         let randomIcon = icons[Math.floor(Math.random() * icons.length)];
         if (newIcons.includes(randomIcon)) {
             randomIcon = icons[Math.floor(Math.random() * icons.length)];
@@ -29,7 +27,7 @@ function getNewIcons() {
 
 function generatePositions() {
     const numbers = [];
-    for (let j = 0; j < icons.length; j += 1) {
+    for (let j = 0; j < i.length; j += 1) {
         numbers.push(j);
     }
     return numbers;
@@ -39,7 +37,7 @@ function generatePositions() {
 function getRandomPairPosition() {
     let position = generatePositions();
     let pairs = [];
-    while (pairs.length < 6) {
+    while (pairs.length < i.length / 2) {
         const randomPosX = position[Math.floor(Math.random() * position.length)];
         position.splice(position.indexOf(randomPosX), 1);
         const randomPosY = position[Math.floor(Math.random() * position.length)];
@@ -126,7 +124,7 @@ function updateIcon(e) {
     }
     click += 1;
     // Handle Score
-    if (match === 6) {
+    if (match === i.length / 2) {
         clearInterval(intervalId);
         timeText.textContent = `It took you ${currentTime} seconds to find the icons`;
         mat.classList.remove("zoomIn");
