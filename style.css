@@ -124,6 +124,9 @@ i {
     font-family: "Comic Sans MS";
     color: #F2D5A5;
 }
+#intro-text {
+    padding: 0.5rem;
+}
 .end {
     height: auto;
     width: 70%;
@@ -134,7 +137,7 @@ i {
 }
 .start-text {
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 .close {
     height: 90vh;
