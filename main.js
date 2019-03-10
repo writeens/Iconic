@@ -128,7 +128,7 @@ function updateIcon(e) {
         clearInterval(intervalId);
         timeText.textContent = `It took you ${currentTime} seconds to find the icons`;
         mat.classList.remove("zoomIn");
-        mat.classList.add("zoomOut");
+        mat.classList.add("zoomOut", "no-display");
         outro.classList.remove("zoomOut", "no-display");
         outro.classList.add("zoomIn");
         divIcons.forEach((icon) => { icon.classList.add("unclickable"); });
@@ -146,6 +146,6 @@ function resetBoard() {
     attachIconsToPairs();
     startTimer();
     outro.setAttribute("class", "outro d-flex justify-content-center align-items-center animated no-display");
-    mat.classList.remove("zoomOut");
+    mat.classList.remove("zoomOut", "no-display");
     mat.classList.add("zoomIn");
 }
