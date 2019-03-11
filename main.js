@@ -89,11 +89,11 @@ divIcons.forEach((divIcon) => { divIcon.addEventListener("click", updateIcon); }
 // variables
 let [click, match] = [1, 0];
 let [firstIcon, secondIcon] = ["", ""];
-let [firstIconPosition, secondIconPosition] = ["", ""];
-let firstNumber = "";
+let [firstIconPosition, secondIconPosition, thirdIconPosition] = ["", "", ""];
+// let firstNumber = "";
 
 function updateIcon(e) {
-    const node = e.target.childNodes[1];
+    let node = e.target.childNodes[1];
     if (click % 2 !== 0) {
         if (firstIcon !== secondIcon) {
             // remove animation
@@ -103,17 +103,23 @@ function updateIcon(e) {
             secondIconPosition.classList.add("hidden");
         }
         firstIconPosition = node;
-        firstNumber = firstIconPosition.dataset.position;
+        if (thirdIconPosition === firstIconPosition) {
+            firstIconPosition = thirdIconPosition;
+        }
+        // firstNumber = firstIconPosition.dataset.position;
         firstIconPosition.classList.remove("hidden");
         firstIcon = firstIconPosition.getAttribute("class");
+        firstIconPosition.parentNode.removeEventListener("click", updateIcon);
     } else {
         // Handle user clicking same icon twice
-        if (node.dataset.position === firstNumber) {
+        /* if (node.dataset.position === firstNumber) {
             return;
-        }
+        } */
+
         secondIconPosition = node;
         secondIconPosition.classList.remove("hidden");
         secondIcon = secondIconPosition.getAttribute("class");
+        secondIconPosition.parentNode.removeEventListener("click", updateIcon);
 
         if (firstIcon === secondIcon) {
             match += 1;
@@ -122,7 +128,10 @@ function updateIcon(e) {
         } else {
             firstIconPosition.parentNode.parentNode.classList.add("shake");
             secondIconPosition.parentNode.parentNode.classList.add("shake");
+            firstIconPosition.parentNode.addEventListener("click", updateIcon);
+            secondIconPosition.parentNode.addEventListener("click", updateIcon);
         }
+        thirdIconPosition = firstIconPosition;
     }
     click += 1;
     // Handle Score
