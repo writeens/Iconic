@@ -38,14 +38,8 @@ body {
     height: 100vh;
     width: 100vw;
 }
-body > div:first-child {
-    width: 100%;
-    height: 20%;
-    border: 1px solid green;
-}
-body > .mat1 {
-    height: 80%;
-    margin: 1.5rem;
+#head {
+    margin-bottom: 1rem;
 }
 .red {
     border: 5px solid red;
@@ -67,6 +61,10 @@ body > .mat1 {
     color: #F2D5A5;
 }
 /*Pay attention to the board dimensions when implementing media queries*/
+#myBoard {
+    height: auto;
+    margin-bottom: 1rem;
+}
 .board {
     max-width: 1024px;
     width: 100vw;
@@ -75,11 +73,6 @@ body > .mat1 {
     border-radius: 0.5rem;
 
 }
-.mat1 {
-    height: 80vh;
-    margin: 1rem;
-}
-
 .col {
     height: 8rem;
     /*border:1px solid rgba(197, 52, 52, 0.534);*/
@@ -94,10 +87,6 @@ body > .mat1 {
     height: 100%;
     width: 100%;
 }
-.myRow {
-    height: 25%;
-    padding: 0;
-}
 i {
     font-size: 3rem;
 }
@@ -110,11 +99,11 @@ i {
 }
 .intro {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
 }
 .outro {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
 }
 .start {
     height: auto;
@@ -171,10 +160,9 @@ i {
     .col {
         margin: 0.5rem;
     }
-    body > .mat1 {
-        margin: 0 0.5rem 0 0.5rem;
-        padding: 0;
-        height: 95%;
+    #myBoard {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
     .start-text {
         font-size: 1.2rem;
