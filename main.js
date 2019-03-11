@@ -117,6 +117,8 @@ function updateIcon(e) {
 
         if (firstIcon === secondIcon) {
             match += 1;
+            firstIconPosition.parentNode.removeEventListener("click", updateIcon);
+            secondIconPosition.parentNode.removeEventListener("click", updateIcon);
         } else {
             firstIconPosition.parentNode.parentNode.classList.add("shake");
             secondIconPosition.parentNode.parentNode.classList.add("shake");
@@ -131,7 +133,7 @@ function updateIcon(e) {
         mat.classList.add("zoomOut", "no-display");
         outro.classList.remove("zoomOut", "no-display");
         outro.classList.add("zoomIn");
-        divIcons.forEach((icon) => { icon.classList.add("unclickable"); });
+        // divIcons.forEach((icon) => { icon.classList.add("unclickable"); });
     }
 }
 
@@ -142,7 +144,8 @@ playAgain.addEventListener("click", resetBoard);
 function resetBoard() {
     [click, match, currentTime] = [1, 0, 0];
     i.forEach((icon) => { icon.setAttribute("class", "fab hidden"); });
-    divIcons.forEach((icon) => { icon.classList.remove("unclickable"); });
+    // divIcons.forEach((divIcon) => { divIcon.classList.remove("unclickable"); });
+    divIcons.forEach((divIcon) => { divIcon.addEventListener("click", updateIcon); });
     attachIconsToPairs();
     startTimer();
     outro.setAttribute("class", "outro d-flex justify-content-center align-items-center animated no-display");
